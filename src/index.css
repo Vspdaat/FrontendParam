@@ -1,0 +1,118 @@
+/* Tailwind CSS utilities */
+@tailwind base;      /* Add this line */
+@tailwind components; /* Add this line */
+@tailwind utilities;
+
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+html, body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+@media (max-width: 550px) {
+    .iphone-flex-col {
+      @apply flex-col;
+    }
+    .widmap{
+      @apply w-[200%];
+    }
+    .padcontact{
+      @apply mt-[250px];
+      
+    }
+    .widhero{
+      @apply w-auto;
+    }
+    
+    /* .mthero{
+      @apply mt-[0px];
+    } */
+
+  }
+/* Base styles for the navigation */
+.navigation {
+  background-color: #000719;
+  color: white;
+  padding: 4px 213px;
+  position: relative;
+  z-index: 20;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-list {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #ecbc56;
+}
+
+/* Dropdown styles */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #000719;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none; /* Prevent clicks when hidden */
+  transition: opacity 10s ease-in-out, transform 100s ease-in-out;
+}
+
+/* Show the dropdown with a slow 10s transition */
+.nav-item:hover .dropdown {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto; /* Enable interaction when visible */
+}
+
+.dropdown-container {
+  padding: 16px;
+}
+
+.dropdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-item {
+  color: white;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: color 10s ease-in-out;
+}
+
+.dropdown-item:hover {
+  color: #ecbc56;
+}
+
+.no-items {
+  color: #808080;
+}
